@@ -109,7 +109,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.selectedTravelData.push(event)
     } else {
       const index = this.selectedTravelData.indexOf(event)
-      if(index >= 0) {
+      if (index >= 0) {
         this.selectedTravelData.splice(index, 1)
       }
     }

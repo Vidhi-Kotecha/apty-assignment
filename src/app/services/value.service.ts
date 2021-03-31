@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 import { BreakpointObserver, BreakpointState, Breakpoints } from '@angular/cdk/layout'
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ValueService {
 

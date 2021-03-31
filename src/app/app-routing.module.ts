@@ -15,8 +15,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: ErrorComponent
-  }
+    component: ErrorComponent,
+  },
 ]
 
 @NgModule({

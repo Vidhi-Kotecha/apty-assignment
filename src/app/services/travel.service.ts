@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { ITravelDetails } from '../models/travel.model';
+import { Injectable } from '@angular/core'
+import { ITravelDetails } from '../models/travel.model'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TravelService {
 
@@ -82,7 +82,7 @@ export class TravelService {
       this.selectedTravelData.push(data)
     } else {
       const index = this.selectedTravelData.indexOf(data)
-      if(index >= 0) {
+      if (index >= 0) {
         this.selectedTravelData.splice(index, 1)
       }
     }

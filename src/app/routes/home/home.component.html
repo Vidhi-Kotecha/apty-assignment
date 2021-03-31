@@ -3,14 +3,14 @@
         <img src="assets/images/logo.svg" alt="logo">
         <img src="assets/images/icons/menu.svg" alt="menu">
     </div>
-    <div class="main-title-small-screen flex-center">Discover great places to visit</div>
+    <div class="main-title-small-screen flex-center" i18n>Discover great places to visit</div>
     <div class="flex-center">
         <ng-container *ngTemplateOutlet="viewOptions"></ng-container>
     </div>
 </div>
 
 <div class="flex-between flex-wrap header"  *ngIf="(isXSmall$ | async) === false">
-    <div class="header-title">Discover great places to visit</div>
+    <div class="header-title" i18n>Discover great places to visit</div>
     <div class="flex-end flex-grow-1"><ng-container *ngTemplateOutlet="viewOptions"></ng-container></div>
 </div>
 <div class="card-container">

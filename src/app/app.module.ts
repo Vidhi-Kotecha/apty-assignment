@@ -8,7 +8,7 @@ import { BtnLikeComponent } from './components/btn-like/btn-like.component'
 import { BtnMessageComponent } from './components/btn-message/btn-message.component'
 import { TagsComponent } from './components/tags/tags.component'
 import { NavComponent } from './components/nav/nav.component'
-import { HomeComponent } from './routes/home/home.component';
+import { HomeComponent } from './routes/home/home.component'
 import { ErrorComponent } from './routes/error/error.component'
 
 @NgModule({

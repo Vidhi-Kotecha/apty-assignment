@@ -11,7 +11,6 @@ export class NavComponent implements OnInit {
   isXSmall$ = this.valueSvc.isXSmall$
   constructor(private valueSvc: ValueService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

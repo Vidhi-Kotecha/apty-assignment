@@ -21,16 +21,14 @@
 
 <div id="snackbar" class="selected-color flex-between">
     <div class="flex-center">
-        <!-- <a (click)="hideSnackbar()" class="flex-center cursor-pointer"> -->
-            <img class="px-10" src="assets/images/icons/minus.svg" alt="dec">
-        <!-- </a> -->
+        <img class="px-10 wh-20" src="assets/images/icons/minus.svg" alt="dec">
         <div class="white size-18 snackbar-text" *ngIf="selectedTravelData && selectedTravelData.length > 0">
             {{selectedTravelData?.length}} {{ (selectedTravelData?.length === 1 ? ' item ' : ' items ') + 'selected' }}
         </div>
     </div>
     <div class="flex-center">
-        <img class="px-10" src="assets/images/icons/heart.svg" alt="like">
-        <img class="px-10" src="assets/images/icons/send.svg" alt="send">
+        <img class="px-10 wh-20" src="assets/images/icons/heart.svg" alt="like">
+        <img class="px-10 wh-20" src="assets/images/icons/send.svg" alt="send">
     </div>
 </div>
 

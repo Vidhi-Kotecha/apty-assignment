@@ -1,0 +1,46 @@
+<div class="main-section-small-screen" *ngIf="(isXSmall$ | async) === true">
+    <div class="flex-between px-30 pt-30">
+        <img src="assets/images/logo.svg" alt="logo">
+        <img src="assets/images/icons/menu.svg" alt="menu">
+    </div>
+    <div class="main-title-small-screen flex-center">Discover great places to visit</div>
+    <div class="flex-center">
+        <ng-container *ngTemplateOutlet="viewOptions"></ng-container>
+    </div>
+</div>
+
+<div class="flex-between flex-wrap header"  *ngIf="(isXSmall$ | async) === false">
+    <div class="header-title">Discover great places to visit</div>
+    <div class="flex-end flex-grow-1"><ng-container *ngTemplateOutlet="viewOptions"></ng-container></div>
+</div>
+<div class="card-container">
+    <app-travel-card class="card" *ngFor="let data of travelData" [view]="view" [cardContent]="data"
+        (selectContent)="selectContent($event)"></app-travel-card>
+</div>
+
+
+<div id="snackbar" class="selected-color flex-between">
+    <div class="flex-center">
+        <!-- <a (click)="hideSnackbar()" class="flex-center cursor-pointer"> -->
+            <img class="px-10" src="assets/images/icons/minus.svg" alt="dec">
+        <!-- </a> -->
+        <div class="white size-18 snackbar-text" *ngIf="selectedTravelData && selectedTravelData.length > 0">
+            {{selectedTravelData?.length}} {{ (selectedTravelData?.length === 1 ? ' item ' : ' items ') + 'selected' }}
+        </div>
+    </div>
+    <div class="flex-center">
+        <img class="px-10" src="assets/images/icons/heart.svg" alt="like">
+        <img class="px-10" src="assets/images/icons/send.svg" alt="send">
+    </div>
+</div>
+
+<ng-template #viewOptions>
+    <div class="options flex-center">
+        <a (click)="toggleView('grid')" class="flex-center" [ngClass]="{'icon-back': view === 'grid'}">
+            <img class="p-10" [src]="gridViewUrl" alt="grid view">
+        </a>
+        <a (click)="toggleView('list')" class="flex-center" [ngClass]="{'icon-back': view === 'list'}">
+            <img class="p-10" [src]="listViewUrl" alt="list view">
+        </a>
+    </div>
+</ng-template>

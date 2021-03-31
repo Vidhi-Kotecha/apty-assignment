@@ -1,0 +1,94 @@
+
+.card-container {
+  transition: all .2s ease-in-out;
+  border-radius: 10px;
+  min-width: 150px;
+  background-color: white;
+  min-height: 60px;
+  margin: 8px 4px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 5px 20px 0px rgba(43, 46, 207, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+.card-thumbnail {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card-container:hover .oval {
+  display: block;
+}
+
+.oval {
+  border: 2px solid #FFFFFF;
+  border-radius: 100%;
+  opacity: 0.800000011920929;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+.position-grid-view {
+  top: 20px;
+  right: 20px;
+  position: absolute;
+}
+
+.position-list-view {
+  top: 23px;
+  left: 23px;
+  position: absolute;
+}
+
+.is-selected {
+  background-color: #37F6B8;
+  border: 2px solid #37F6B8;
+  display: block;
+}
+
+.tick {
+  display: inline-block;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+  border-bottom: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+
+.title {
+  color: #2B2ECF;
+  font-family: Poppins-SemiBold;
+}
+
+.title-selected {
+  color: white !important;
+}
+
+.desc {
+  color: #7F8A9C;
+}
+
+.desc-selected {
+  color: #C5D3E8 !important
+}
+
+.card-thumbnail-small {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}

@@ -1,0 +1,39 @@
+<!-- Grid View -->
+<div *ngIf="view === 'grid'" class="card-container block relative p-10"
+    [ngClass]="{'selected-color': cardContent?.isSelected}">
+    <div class="card-thumbnail" [ngStyle]="{'background-image': 'url(' + cardContent?.imageUrl + ')'}"></div>
+    <a class="oval flex position-grid-view" [ngClass]="{'is-selected': cardContent?.isSelected}" (click)="toggleSelect()">
+        <div class="tick" *ngIf="cardContent?.isSelected"></div>
+    </a>
+    <div class="flex-middle flex-wrap">
+        <app-tags *ngFor="let tag of cardContent?.tags" [tag]="tag"></app-tags>
+    </div>
+    <div class="px-4 pb-20">
+        <div class="font-weight-600 size-24 title pb-10" [ngClass]="{'title-selected': cardContent?.isSelected}">
+            {{cardContent?.title}}
+        </div>
+        <div class="desc size-18" [ngClass]="{'desc-selected': cardContent?.isSelected}">
+            {{cardContent?.description}}
+        </div>
+    </div>
+    <div class="flex-middle flex-row-reverse">
+        <app-btn-like class="pl-10" [liked]="cardContent?.like || false"></app-btn-like>
+        <app-btn-message [messaged]="cardContent?.message || false"></app-btn-message>
+    </div>
+</div>
+
+<!-- List View -->
+<div *ngIf="view === 'list'" class="card-container flex-between flex-wrap relative p-10"
+    [ngClass]="{'selected-color': cardContent?.isSelected}">
+    <div class="flex-center">
+        <div class="card-thumbnail-small" [ngStyle]="{'background-image': 'url(' + cardContent?.imageUrl + ')'}"></div>
+        <a class="oval flex position-list-view" [ngClass]="{'is-selected': cardContent?.isSelected}"
+            (click)="toggleSelect()">
+            <div class="tick" *ngIf="cardContent?.isSelected"></div>
+        </a>
+        <div class="font-weight-600 size-24 title pl-10" [ngClass]="{'title-selected': cardContent?.isSelected}">
+            {{cardContent?.title}}
+        </div>
+    </div>
+    <app-btn-like class="px-10 flex-end 10 flex-grow-1" [liked]="cardContent?.like || false"></app-btn-like>
+</div>

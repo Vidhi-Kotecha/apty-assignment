@@ -22,7 +22,7 @@
 <div id="snackbar" class="selected-color flex-between">
     <div class="flex-center">
         <img class="px-10 wh-20" src="assets/images/icons/minus.svg" alt="dec">
-        <div class="white size-18 snackbar-text" *ngIf="selectedTravelData && selectedTravelData.length > 0">
+        <div class="white size-16 snackbar-text" *ngIf="selectedTravelData && selectedTravelData.length > 0">
             {{selectedTravelData?.length}} {{ (selectedTravelData?.length === 1 ? ' item ' : ' items ') + 'selected' }}
         </div>
     </div>

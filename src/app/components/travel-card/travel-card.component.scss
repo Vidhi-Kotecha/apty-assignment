@@ -5,13 +5,25 @@
   min-width: 150px;
   background-color: white;
   min-height: 60px;
-  margin: 8px 4px;
+  margin-top: 20px;
   cursor: pointer;
+  -webkit-animation: fadein 1s;
+  animation: fadein 1s;
 
   &:hover {
-    box-shadow: 0 5px 20px 0px rgba(43, 46, 207, 0.5);
+    box-shadow: 0 5px 20px 0 rgba(43, 46, 207, 0.5);
     transform: scale(1.05);
   }
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0;} 
+  to { opacity: 1;}
+}
+
+@keyframes fadein {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .card-thumbnail {

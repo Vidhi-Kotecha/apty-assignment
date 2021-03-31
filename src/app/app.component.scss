@@ -1,9 +1,14 @@
 .w-fix {
-    width: 95px;
-    min-height: calc(100vh - 40px);
-    margin: 20px 0 20px 20px;
+  width: 95px;
+  min-height: calc(100vh - 40px);
+  height: calc(100vh - 40px);
+  margin: 20px 0 20px 20px;
+
+  @media screen and (orientation:landscape) and (max-width: 700px) {
+    height: fit-content;
+  }
 }
 
 .w-expand {
-    width: calc(100% - 115px);
+  width: calc(100% - 115px);
 }

@@ -18,8 +18,11 @@
                         <img class="wh-20" src="assets/images/icons/gear.svg" alt="gear">
                 </a>
         </div>
-        <a routerLink="/logout" class="m-20 pt-30" routerLinkActive="router-link-active flex-center"><img class="wh-20"
-                        src="assets/images/icons/log-out.svg" alt="log-out"></a>
+        <div class="pt-30">
+                <a routerLink="/logout" class="m-20 flex-center" routerLinkActive="router-link-active">
+                        <img class="wh-20" src="assets/images/icons/log-out.svg" alt="log-out">
+                </a>
+        </div>
 </div>
 
 <div class="selected-color small-bg flex-between" *ngIf="(isXSmall$ | async) === true">

@@ -4,7 +4,7 @@
   height: calc(100vh - 40px);
   margin: 20px 0 20px 20px;
 
-  @media screen and (orientation:landscape) and (max-width: 700px) {
+  @media screen and (orientation:landscape) and (max-height: 600px) {
     height: fit-content;
   }
 }

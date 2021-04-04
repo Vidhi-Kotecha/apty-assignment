@@ -13,6 +13,11 @@
   width: calc(100% - 115px);
 }
 
+//mobile will include address bar also
+.min-vh {
+  min-height: 92vh;
+}
+
 .align-end {
   display: flex;
   align-items: flex-end;

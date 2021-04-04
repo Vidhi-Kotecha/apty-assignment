@@ -58,10 +58,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       return
     }
     let col = 0
-    let outputArr = []
+    const outputArr = []
     while (col < this.columnCount) {
       for (let i = 0; i < this.travelService.travelData.length; i += this.columnCount) {
-        let val = this.travelService.travelData[i + col]
+        const val = this.travelService.travelData[i + col]
         if (val !== undefined) {
           if (i + this.columnCount >= this.travelService.travelData.length) {
             val.isInLastRow = true

@@ -21,4 +21,10 @@ export class TravelCardComponent implements OnInit {
     this.selectContent.emit(this.cardContent)
   }
 
+  eventClicked(event: any) {
+    if (event.keyCode === 13) {
+      this.toggleSelect()
+    }
+  }
+
 }

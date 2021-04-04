@@ -14,7 +14,7 @@ export class TravelCardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   toggleSelect() {
     this.cardContent.isSelected = !this.cardContent.isSelected

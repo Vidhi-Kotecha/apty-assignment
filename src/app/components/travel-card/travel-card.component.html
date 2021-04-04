@@ -2,7 +2,8 @@
 <div *ngIf="view === 'grid'" class="card-container block relative p-10"
     [ngClass]="{'selected-color': cardContent?.isSelected, 'add-margin': cardContent?.isInLastRow}">
     <div class="card-thumbnail" [ngStyle]="{'background-image': 'url(' + cardContent?.imageUrl + ')'}"></div>
-    <a class="oval flex position-grid-view" [ngClass]="{'is-selected': cardContent?.isSelected}" (click)="toggleSelect()">
+    <a class="oval flex position-grid-view" [ngClass]="{'is-selected': cardContent?.isSelected}"
+        (click)="toggleSelect()">
         <div class="tick" *ngIf="cardContent?.isSelected"></div>
     </a>
     <div class="flex-middle flex-wrap">

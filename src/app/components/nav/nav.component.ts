@@ -9,8 +9,8 @@ import { ValueService } from 'src/app/services/value.service'
 export class NavComponent implements OnInit {
 
   isXSmall$ = this.valueSvc.isXSmall$
-  constructor(private valueSvc: ValueService) {}
+  constructor(private valueSvc: ValueService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

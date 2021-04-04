@@ -9,9 +9,11 @@
     </div>
 </div>
 
-<div class="flex-between flex-wrap header"  *ngIf="(isXSmall$ | async) === false">
+<div class="flex-between flex-wrap header" *ngIf="(isXSmall$ | async) === false">
     <h1 class="header-title" i18n>Discover great places to visit</h1>
-    <div class="flex-end flex-grow-1"><ng-container *ngTemplateOutlet="viewOptions"></ng-container></div>
+    <div class="flex-end flex-grow-1">
+        <ng-container *ngTemplateOutlet="viewOptions"></ng-container>
+    </div>
 </div>
 <div class="card-container">
     <app-travel-card class="inline-block w-full" *ngFor="let data of travelData" [view]="view" [cardContent]="data"
@@ -22,7 +24,8 @@
 <div id="snackbar" class="selected-color flex-between">
     <div class="flex-center">
         <img class="px-10 wh-20" src="assets/images/icons/minus.svg" alt="dec">
-        <div class="white size-16 snackbar-text" role="alert" *ngIf="selectedTravelData && selectedTravelData.length > 0">
+        <div class="white size-16 snackbar-text" role="alert"
+            *ngIf="selectedTravelData && selectedTravelData.length > 0">
             {{selectedTravelData?.length}} {{ (selectedTravelData?.length === 1 ? ' item ' : ' items ') + 'selected' }}
         </div>
     </div>
@@ -34,10 +37,12 @@
 
 <ng-template #viewOptions>
     <div class="options flex-center">
-        <a role="button" (keyup)="eventClicked($event, 'grid')" tabindex="0" (click)="toggleView('grid')" class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'grid'}">
+        <a role="button" (keyup)="eventClicked($event, 'grid')" tabindex="0" (click)="toggleView('grid')"
+            class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'grid'}">
             <img class="p-10 wh-20" [src]="gridViewUrl" alt="grid view">
         </a>
-        <a role="button" (keyup)="eventClicked($event, 'list')" tabindex="0" (click)="toggleView('list')" class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'list'}">
+        <a role="button" (keyup)="eventClicked($event, 'list')" tabindex="0" (click)="toggleView('list')"
+            class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'list'}">
             <img class="p-10 wh-20" [src]="listViewUrl" alt="list view">
         </a>
     </div>

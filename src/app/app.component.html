@@ -6,8 +6,10 @@
         </div>
     </div>
 
-    <div class="flex flex-col" *ngIf="(isXSmall$ | async) === true">
+    <div class="flex flex-col min-vh" *ngIf="(isXSmall$ | async) === true">
         <router-outlet></router-outlet>
-        <app-nav></app-nav>
+        <div class="align-end flex-grow-1">
+            <app-nav class="w-full"></app-nav>
+        </div>
     </div>
 </main>

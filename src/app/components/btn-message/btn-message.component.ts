@@ -10,6 +10,6 @@ export class BtnMessageComponent implements OnInit {
   @Input() messaged = false
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

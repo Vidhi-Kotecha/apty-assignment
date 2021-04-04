@@ -10,6 +10,6 @@ export class BtnLikeComponent implements OnInit {
   @Input() liked = false
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

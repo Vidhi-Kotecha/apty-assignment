@@ -9,6 +9,6 @@ export class TagsComponent implements OnInit {
   @Input() tag = ''
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }

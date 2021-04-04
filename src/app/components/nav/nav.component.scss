@@ -6,15 +6,19 @@
 
 .small-bg {
   border-radius: 20px;
-  margin: 0 16px 8px 16px;
+  margin: 0 16px 12px 16px;
   box-shadow: 0 5px 20px 0px rgba(43, 46, 207, 0.5);
   padding: 0px 10px;
+  min-height: 64px;
 }
 
 .router-link-active {
   background-color: #FF0066;
   border-radius: 50%;
   padding: 12px;
+}
+
+.extra-margin {
   margin: 15px 20px 15px 20px !important;
 }
 

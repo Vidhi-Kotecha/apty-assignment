@@ -9,6 +9,6 @@ import { ValueService } from './services/value.service'
 export class AppComponent {
   title = 'apty-assignment'
   isXSmall$ = this.valueSvc.isXSmall$
-  constructor(private valueSvc: ValueService) {}
+  constructor(private valueSvc: ValueService) { }
 
 }

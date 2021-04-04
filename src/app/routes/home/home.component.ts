@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
-import {  Subscription } from 'rxjs'
+import { Subscription } from 'rxjs'
 import { ITravelDetails, View } from 'src/app/models/travel.model'
 import { TravelService } from 'src/app/services/travel.service'
 import { ValueService } from 'src/app/services/value.service'
@@ -23,9 +23,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   columnCount = 4
 
   constructor(
-    private router: Router, 
-    private route: ActivatedRoute, 
-    private valueSvc: ValueService, 
+    private router: Router,
+    private route: ActivatedRoute,
+    private valueSvc: ValueService,
     private travelService: TravelService
   ) { }
 
@@ -41,29 +41,29 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    if(window.innerWidth <= 600) {
+    if (window.innerWidth <= 600) {
       this.columnCount = 1
-    } else if(window.innerWidth > 600 && window.innerWidth <= 860) {
+    } else if (window.innerWidth > 600 && window.innerWidth <= 860) {
       this.columnCount = 2
-    } else if(window.innerWidth > 860 && window.innerWidth <= 1280) {
+    } else if (window.innerWidth > 860 && window.innerWidth <= 1280) {
       this.columnCount = 3
-    } else if(window.innerWidth > 1280) {
+    } else if (window.innerWidth > 1280) {
       this.columnCount = 4
     }
     this.reorderHorizontally()
   }
 
   reorderHorizontally() {
-    if(this.columnCount === 1) {
+    if (this.columnCount === 1) {
       return
     }
     let col = 0
     let outputArr = []
-    while(col < this.columnCount) {
-      for(let i = 0; i < this.travelService.travelData.length; i+=this.columnCount) {
+    while (col < this.columnCount) {
+      for (let i = 0; i < this.travelService.travelData.length; i += this.columnCount) {
         let val = this.travelService.travelData[i + col]
-        if(val !== undefined) {
-          if(i+this.columnCount >= this.travelService.travelData.length) {
+        if (val !== undefined) {
+          if (i + this.columnCount >= this.travelService.travelData.length) {
             val.isInLastRow = true
           } else {
             val.isInLastRow = false
@@ -97,11 +97,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
- eventClicked(event: any, view: View) {
-   if(event.keyCode === 13 || event.keyCode === 32) {
-     this.toggleView(view)
-   }
- }
+  eventClicked(event: any, view: View) {
+    if (event.keyCode === 13 || event.keyCode === 32) {
+      this.toggleView(view)
+    }
+  }
 
   ngOnDestroy() {
     this.routeSubscription?.unsubscribe()

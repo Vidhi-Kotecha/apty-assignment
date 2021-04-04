@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core'
-import { ActivatedRoute, Event, ParamMap, Router } from '@angular/router'
-import { Subscription } from 'rxjs'
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
+import {  Subscription } from 'rxjs'
 import { ITravelDetails, View } from 'src/app/models/travel.model'
 import { ValueService } from 'src/app/services/value.service'
 
@@ -83,9 +83,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   gridViewUrl = 'assets/images/icons/grid-white.svg'
   listViewUrl = 'assets/images/icons/list.svg'
   selectedTravelData: ITravelDetails[] = []
+  initialTravelData = this.travelData
 
   isXSmall$ = this.valueSvc.isXSmall$
   routeSubscription: Subscription | null = null
+  columnCount = 4
 
   constructor(private router: Router, private route: ActivatedRoute, private valueSvc: ValueService) { }
 
@@ -95,6 +97,37 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.view = viewParam === 'grid' || viewParam === 'list' ? viewParam : 'grid'
       this.toggleView(this.view)
     })
+    this.onResize()
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if(window.innerWidth <= 600) {
+      this.columnCount = 1
+    } else if(window.innerWidth > 600 && window.innerWidth <= 860) {
+      this.columnCount = 2
+    } else if(window.innerWidth > 860 && window.innerWidth <= 1280) {
+      this.columnCount = 3
+    } else if(window.innerWidth > 1280) {
+      this.columnCount = 4
+    }
+    this.reorderHorizontally()
+  }
+
+  reorderHorizontally() {
+    console.log(this.columnCount)
+    let col = 0
+    let outputArr = []
+    while(col < this.columnCount) {
+      for(let i = 0; i < this.initialTravelData.length; i+=this.columnCount) {
+        let val = this.initialTravelData[i + col]
+        if(val !== undefined) {
+          outputArr.push(val)
+        }
+      }
+      col++
+    }
+    this.travelData = outputArr
   }
 
   toggleView(selectedView: View) {
@@ -125,12 +158,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
-  // hideSnackbar() {
-  //   const x = document.getElementById('snackbar')
-  //   if (x) {
-  //     x.classList.remove('show')
-  //   }
-  // }
+ eventClicked(event: any, view: View) {
+   if(event.keyCode === 13 || event.keyCode === 32) {
+     this.toggleView(view)
+   }
+ }
 
   ngOnDestroy() {
     this.routeSubscription?.unsubscribe()

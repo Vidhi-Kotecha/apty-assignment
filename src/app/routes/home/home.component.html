@@ -34,10 +34,10 @@
 
 <ng-template #viewOptions>
     <div class="options flex-center">
-        <a (click)="toggleView('grid')" class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'grid'}">
+        <a role="button" (keyup)="eventClicked($event, 'grid')" tabindex="0" (click)="toggleView('grid')" class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'grid'}">
             <img class="p-10 wh-20" [src]="gridViewUrl" alt="grid view">
         </a>
-        <a (click)="toggleView('list')" class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'list'}">
+        <a role="button" (keyup)="eventClicked($event, 'list')" tabindex="0" (click)="toggleView('list')" class="flex-center view-toggle" [ngClass]="{'icon-back': view === 'list'}">
             <img class="p-10 wh-20" [src]="listViewUrl" alt="list view">
         </a>
     </div>

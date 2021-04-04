@@ -55,6 +55,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   reorderHorizontally() {
     if (this.columnCount === 1) {
+      this.travelData.forEach((data, index) => {
+        if(index === this.travelData.length -1) {
+          data.isInLastRow = true
+        } else {
+          data.isInLastRow = false
+        }
+      })
       return
     }
     let col = 0

@@ -23,7 +23,7 @@
 </div>
 
 <!-- List View -->
-<div *ngIf="view === 'list'" class="card-container flex-between flex-wrap relative p-10"
+<div *ngIf="view === 'list'" class="card-container increase-margin flex-between flex-wrap relative p-10"
     [ngClass]="{'selected-color': cardContent?.isSelected}">
     <div class="flex-center">
         <div class="card-thumbnail-small" [ngStyle]="{'background-image': 'url(' + cardContent?.imageUrl + ')'}"></div>

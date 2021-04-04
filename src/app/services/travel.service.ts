@@ -77,6 +77,10 @@ export class TravelService {
 
   constructor() { }
 
+  getTravelData() {
+    return this.travelData
+  }
+
   updateSelectedTravelData(data: ITravelDetails) {
     if (data?.isSelected && this.selectedTravelData.indexOf(data) === -1) {
       this.selectedTravelData.push(data)
@@ -86,6 +90,7 @@ export class TravelService {
         this.selectedTravelData.splice(index, 1)
       }
     }
+    return this.selectedTravelData
   }
 
 }

@@ -10,6 +10,7 @@ import { TagsComponent } from './components/tags/tags.component'
 import { NavComponent } from './components/nav/nav.component'
 import { HomeComponent } from './routes/home/home.component'
 import { ErrorComponent } from './routes/error/error.component'
+import { TravelService } from './services/travel.service'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { ErrorComponent } from './routes/error/error.component'
     BrowserModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [TravelService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 <!-- Grid View -->
 <div *ngIf="view === 'grid'" class="card-container block relative p-10"
-    [ngClass]="{'selected-color': cardContent?.isSelected}">
+    [ngClass]="{'selected-color': cardContent?.isSelected, 'add-margin': cardContent?.isInLastRow}">
     <div class="card-thumbnail" [ngStyle]="{'background-image': 'url(' + cardContent?.imageUrl + ')'}"></div>
     <a class="oval flex position-grid-view" [ngClass]="{'is-selected': cardContent?.isSelected}" (click)="toggleSelect()">
         <div class="tick" *ngIf="cardContent?.isSelected"></div>
@@ -23,8 +23,8 @@
 </div>
 
 <!-- List View -->
-<div *ngIf="view === 'list'" class="card-container increase-margin flex-between flex-wrap relative p-10"
-    [ngClass]="{'selected-color': cardContent?.isSelected}">
+<div *ngIf="view === 'list'" class="card-container flex-between flex-wrap relative p-10"
+    [ngClass]="{'selected-color': cardContent?.isSelected, 'add-margin': cardContent?.isInLastRow}">
     <div class="flex-center">
         <div class="card-thumbnail-small" [ngStyle]="{'background-image': 'url(' + cardContent?.imageUrl + ')'}"></div>
         <a class="oval flex position-list-view" [ngClass]="{'is-selected': cardContent?.isSelected}"

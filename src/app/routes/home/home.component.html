@@ -14,7 +14,7 @@
     <div class="flex-end flex-grow-1"><ng-container *ngTemplateOutlet="viewOptions"></ng-container></div>
 </div>
 <div class="card-container">
-    <app-travel-card class="card" *ngFor="let data of travelData" [view]="view" [cardContent]="data"
+    <app-travel-card class="inline-block w-full" *ngFor="let data of travelData" [view]="view" [cardContent]="data"
         (selectContent)="selectContent($event)"></app-travel-card>
 </div>
 

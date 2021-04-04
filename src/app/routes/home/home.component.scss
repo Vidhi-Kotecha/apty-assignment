@@ -31,12 +31,7 @@
 .card-container {
   -webkit-column-count: 4;
   -moz-column-count: 4;
-  column-count: 4;
-  
-  // -webkit-column-width: 250px;
-  // -moz-column-width: 250px;
-  // column-width: 250px;
-  
+  column-count: 4;  
   -webkit-column-gap: 1.5em;
   -moz-column-gap: 1.5em;
   column-gap: 1.5em;
@@ -66,11 +61,6 @@
     -webkit-column-count: 4;
     column-count: 4;
   }
-}
-
-.card {
-  display: inline-block;
-  width: 100%;
 }
 
 #snackbar {

@@ -7,6 +7,7 @@ export interface ITravelDetails {
     like: boolean
     // UI only
     isSelected?: boolean
+    isInLastRow?: boolean
 }
 
 export type View = 'grid' | 'list'
